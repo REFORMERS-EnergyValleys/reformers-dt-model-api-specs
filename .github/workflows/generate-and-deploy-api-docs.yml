@@ -5,9 +5,9 @@ on:
     branches:
       - main
     paths:
-      - 'server/openapi.yml'
-      - 'repository/openapi.yml'
-      - '.github/workflows/generate-and-deploy-api-docs.yaml'
+      - 'server/openapi.yaml'
+      - 'repository/openapi.yaml'
+      - '.github/workflows/generate-and-deploy-api-docs.yml'
   workflow_dispatch:
 
 jobs:
@@ -31,10 +31,10 @@ jobs:
         mkdir -p dist/specs
 
         # Bundle server OpenAPI spec
-        redoc-cli bundle server/openapi.yml -o dist/specs/server.html
+        redoc-cli bundle server/openapi.yaml -o dist/specs/server.html
 
         # Bundle repository OpenAPI spec
-        redoc-cli bundle repository/openapi.yml -o dist/specs/repository.html
+        redoc-cli bundle repository/openapi.yaml -o dist/specs/repository.html
 
     - name: Create a fancier index.html
       run: |
