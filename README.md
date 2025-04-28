@@ -1,6 +1,7 @@
 # OpenAPI Specification for REFOMERS Digital Twin Model API
 
 This repository contains the [OpenAPI](https://www.openapis.org/) specification for the [REFORMERS] Digital Twin Model API.
+The API documentation is available [online](https://reformers-energyvalleys.github.io/reformers-dt-model-api-specs/).
 
 The specification is split in 2 parts:
 
