@@ -1,3 +1,5 @@
+[![pages-build-deployment](https://github.com/REFORMERS-EnergyValleys/reformers-dt-model-api-specs/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/REFORMERS-EnergyValleys/reformers-dt-model-api-specs/actions/workflows/pages/pages-build-deployment)
+
 # OpenAPI Specification for REFOMERS Digital Twin Model API
 
 This repository contains the [OpenAPI](https://www.openapis.org/) specification for the [REFORMERS] Digital Twin Model API.
