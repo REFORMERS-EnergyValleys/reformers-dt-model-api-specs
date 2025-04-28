@@ -1,0 +1,9 @@
+---
+title: optional parameters for invoking the model
+type: object
+additionalProperties:
+  oneOf:
+    - type: string
+    - type: number
+example:
+  foo: bar

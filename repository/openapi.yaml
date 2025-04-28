@@ -1,0 +1,68 @@
+---
+openapi: 3.0.3
+info:
+  title: 'REFORMERS Digital Twin: Model Repository API'
+  description: |
+    This API provides access to the REFORMERS Digital Twin Model Repository.
+
+    _Funding acknowledgement_:
+    The [REFORMERS project](https://reformers-energyvalleys.eu) has received funding from the European Union’s research and innovation programme Horizon Europe under the [Grant Agreement No.101136211](https://cordis.europa.eu/project/id/101136211)
+
+  license:
+    name: BSD-2-Clause
+    url: https://opensource.org/license/bsd-2-clause
+  version: v0.1
+  x-logo:
+    url: https://reformers-energyvalleys.eu/root/wp-content/themes/rerformers-theme/assets/img/logo-reformers.svg
+    href: https://reformers-energyvalleys.eu
+
+externalDocs:
+  description: Find out more about REFORMERS
+  url: https://reformers-energyvalleys.eu
+
+servers:
+- url: 'https://reformers-dev.vlab-central.ait.ac.at'
+- url: 'https://reformers-dev.ait.ac.at'
+
+components:
+  securitySchemes:
+    BasicHttpAuthentication:
+      description: Basic HTTP Authentication
+      type: http
+      scheme: Basic
+    NoAuthentication:
+      description: Anonymous access
+      type: http
+      scheme: none
+
+tags:
+- name: Repository settings
+  description: List the repositories and their settings
+- name: Search repository
+  description: Search the repository for available components and assets
+- name: Retrieve manifests
+  description: Retrieve manifests for container images from Docker registry
+- name: Retrieve blobs
+  description: Retrieve blobs for container images from Docker registry
+- name: Handle artifacts
+  description: Handle arbitrary artifacts (in a Maven repository)
+
+paths:
+  /service/rest/v1/repositorySettings:
+    $ref: paths/service@rest@v1@repositorySettings.yaml
+  /service/rest/v1/search:
+    $ref: paths/service@rest@v1@search.yaml
+  /service/rest/v1/search/assets:
+    $ref: paths/service@rest@v1@search@assets.yaml
+  /repository/model-generators/v2/{generator-name}/manifests/{generator-tag}:
+    $ref: paths/repository@model-generators@v2@{generator-name}@manifests@{generator-tag}.yaml
+  /repository/model-images/v2/{generator-name}/{generator-tag}/{model-name}/manifests/{model-tag}:
+    $ref: paths/repository@model-images@v2@{generator-name}@{generator-tag}@{model-name}@manifests@{model-tag}.yaml
+  /repository/model-generators/v2/{generator-name}/blobs/{digest}:
+    $ref: paths/repository@model-generators@v2@{generator-name}@blobs@{digest}.yaml
+  /repository/model-images/v2/{generator-name}/{generator-tag}/{model-name}/blobs/{digest}:
+    $ref: paths/repository@model-generators@v2@{generator-name}@{generator-tag}@{model-name}@blobs@{digest}.yaml
+  /service/rest/v1/components:
+    $ref: paths/service@rest@v1@components.yaml
+  /repository/model-artifacts/{generator-name}/{generator-tag}/{model-name}/{model-tag}/{file-name}.{file-extension}:
+    $ref: paths/repository@model-artifacts@{generator-name}@{generator-tag}@{model-name}@{model-tag}@{file-name}.{file-extension}.yaml

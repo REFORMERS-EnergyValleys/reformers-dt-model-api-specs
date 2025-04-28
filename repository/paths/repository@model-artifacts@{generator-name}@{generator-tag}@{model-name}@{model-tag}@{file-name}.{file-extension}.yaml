@@ -1,0 +1,68 @@
+---
+get:
+  summary: Download model artifact (from Maven repository).
+  tags:
+  - Handle artifacts
+  operationId: get_artifact
+
+  security:
+   - NoAuthentication: []
+
+  parameters:
+  - name: generator-name
+    in: path
+    required: true
+    schema:
+      type: string
+      pattern: ^[a-zA-Z0-9][a-zA-Z0-9-]+$
+      description: model generator name
+  - name: generator-tag
+    in: path
+    required: true
+    schema:
+      type: string
+      pattern: ^[a-zA-Z0-9][a-zA-Z0-9-]+$
+      description: model generator version
+  - name: model-name
+    in: path
+    required: true
+    schema:
+      type: string
+      pattern: ^[a-zA-Z0-9][a-zA-Z0-9-]+$
+      description: model artifact name
+  - name: model-tag
+    in: path
+    required: true
+    schema:
+      type: string
+      pattern: ^[a-zA-Z0-9][a-zA-Z0-9-]+$
+      description: model artifact version
+  - name: file-name
+    in: path
+    required: true
+    schema:
+      type: string
+      pattern: ^[a-zA-Z0-9][a-zA-Z0-9-]+$
+      description: model artifact file name
+  - name: file-extension
+    in: path
+    required: true
+    schema:
+      type: string
+      pattern: ^[a-zA-Z0-9]+$
+      description: model artifact file extension
+
+  responses:
+    200:
+      description: Success
+      content:
+        "*":
+          schema:
+            type: string
+            format: binary
+    404:
+      description: Not Found
+      content:
+        text/html:
+          schema:
+            type: string

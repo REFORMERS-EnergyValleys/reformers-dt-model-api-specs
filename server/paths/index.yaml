@@ -1,0 +1,18 @@
+---
+get:
+  tags:
+  - Info
+  summary: Get authentication info
+  operationId: get_auth_info
+
+  responses:
+    200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/info_auth.yaml
+    401:
+      $ref: ../components/responses/unauthorized_error.yaml
+    403:
+      $ref: ../components/responses/forbidden_error.yaml

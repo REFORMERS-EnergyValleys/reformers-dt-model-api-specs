@@ -1,0 +1,33 @@
+---
+type: object
+title: info about model generation task
+description: provides information about the task for creating a new model
+required:
+  - task-id
+  - status
+  - creation-date
+properties:
+  task-id:
+    $ref: task_id.yaml
+  status:
+    type: string
+    title: status of model generation task
+    enum:
+      - pending
+      - finished
+      - superseded
+      - failed
+    description: |-
+       * `pending` - task has not yet finished
+       * `finished` - task has finished successfully and the new model container image is available in the registry
+       * `superseded` - a newer task has generated a model container image that is available in the registry
+       * `failed` - task has failed and has not generated a new model container image in the registry
+    example: finished
+  creation-date:
+    type: string
+    title: date and time of task creation
+    format: date-time
+    example: 2025-07-21T17:32:28Z
+  info:
+    type: string
+    title: additional information on task

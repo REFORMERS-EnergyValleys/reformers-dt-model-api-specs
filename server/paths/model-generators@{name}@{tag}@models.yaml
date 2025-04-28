@@ -1,0 +1,97 @@
+---
+get:
+  tags:
+  - Models
+  summary: Get information about available models
+  operationId: list_models
+
+  parameters:
+    - name: generator-name
+      in: path
+      required: true
+      schema:
+        $ref: ../components/schemas/model_generator_name.yaml
+    - name: generator-tag
+      in: path
+      required: true
+      schema:
+        $ref: ../components/schemas/model_generator_tag.yaml
+
+  responses:
+    200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/list_models.yaml
+    401:
+      $ref: ../components/responses/unauthorized_error.yaml
+    403:
+      $ref: ../components/responses/forbidden_error.yaml
+    404:
+      $ref: ../components/responses/generator_not_found_error.yaml
+
+post:
+  tags:
+  - Models
+  summary: Create new model
+  operationId: create_model
+
+  parameters:
+    - name: generator-name
+      in: path
+      required: true
+      schema:
+        $ref: ../components/schemas/model_generator_name.yaml
+    - name: generator-tag
+      in: path
+      required: true
+      schema:
+        $ref: ../components/schemas/model_generator_tag.yaml
+
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/request_create_model.yaml
+
+  responses:
+    202:
+      description: Request has been accepted for processing, but processing has not finished yet.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/info_create_model.yaml
+    400:
+      description: Invalid model generator parameters
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/application_problem_json.yaml
+          example:
+            {
+              "detail": "Invalid model generator parameters",
+              "status": 400,
+              "title": "Bad Request",
+              "type": "about:blank"
+            }
+    401:
+      $ref: ../components/responses/unauthorized_error.yaml
+    403:
+      $ref: ../components/responses/forbidden_error.yaml
+    404:
+      $ref: ../components/responses/generator_not_found_error.yaml
+    500:
+      description: Creation of new model failed
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/application_problem_json.yaml
+          example:
+            {
+              "detail": "Creation of new model failed",
+              "status": 500,
+              "title": "Interal Server Error",
+              "type": "about:blank"
+            }

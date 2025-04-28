@@ -1,0 +1,12 @@
+description: 'Model generator not found'
+content:
+  application/problem+json:
+    schema:
+      $ref: ../schemas/application_problem_json.yaml
+    example:
+      {
+        "detail": "Model generator not found",
+        "status": 404,
+        "title": "Not Found",
+        "type": "about:blank"
+      }

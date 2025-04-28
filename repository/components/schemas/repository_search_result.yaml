@@ -1,0 +1,8 @@
+---
+type: object
+title: results from repository search
+properties:
+  items:
+    $ref: repository_component_info_list.yaml
+  continuationToken:
+    type: string

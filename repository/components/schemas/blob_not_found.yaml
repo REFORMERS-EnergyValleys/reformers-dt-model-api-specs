@@ -1,0 +1,18 @@
+---
+type: object
+title: manifest not found error
+properties:
+  errors:
+    type: array
+    items:
+      type: object
+      properties:
+        code:
+          type: string
+          example: BLOB_UNKNOWN
+        message:
+          type: string
+          example: blob unknown to registry
+        detail:
+          type: string
+          example: sha256:d04f4d9ca0a2cf74c4975c36fff511df7e7a74acd73fd390d21ab64b6d00376c

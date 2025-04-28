@@ -1,0 +1,7 @@
+---
+type: string
+title: model generator name
+pattern: ^[a-zA-Z0-9][a-zA-Z0-9-]+$
+description: unique name for a model generator
+# example: el-grid-pandapower
+example: example-generator

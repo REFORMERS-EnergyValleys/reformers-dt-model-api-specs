@@ -1,0 +1,12 @@
+description: 'Bearer access token is missing'
+content:
+  application/problem+json:
+    schema:
+      $ref: ../schemas/application_problem_json.yaml
+    example:
+      {
+        "detail": "No authorization token provided",
+        "status": 401,
+        "title": "Unauthorized",
+        "type": "about:blank"
+      }

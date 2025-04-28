@@ -1,0 +1,5 @@
+---
+type: array
+title: List of Repository settings
+items:
+  $ref: repository_setting.yaml

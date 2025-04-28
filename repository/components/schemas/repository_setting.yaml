@@ -1,0 +1,32 @@
+---
+type: object
+properties:
+  name:
+    type: string
+    description: A unique identifier for this repository
+    pattern: ^[a-zA-Z0-9\-]{1}[a-zA-Z0-9_\-\.]*$
+    example: model-images
+  format:
+    type: string
+    description: Component format held in this repository
+    example: docker
+  type:
+    type: string
+    description: Controls if deployments of and updates to artifacts are allowed
+    enum: [hosted, proxy, group]
+    example: hosted
+  url:
+    type: string
+    format: uri
+    description: URL to the repository
+  online:
+    type: boolean
+    description: Whether this repository accepts incoming requests
+    example: true
+additionalProperties: true
+required:
+  - name
+  - format
+  - type
+  - url
+  - online

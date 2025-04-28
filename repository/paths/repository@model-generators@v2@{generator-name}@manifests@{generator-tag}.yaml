@@ -1,0 +1,39 @@
+---
+get:
+  summary: Retrieve manifest of model generator image from the repository.
+  tags:
+  - Retrieve manifests
+  operationId: get_manifest_generator
+
+  security:
+   - NoAuthentication: []
+
+  parameters:
+  - name: generator-name
+    in: path
+    required: true
+    schema:
+      type: string
+      pattern: ^[a-zA-Z0-9][a-zA-Z0-9-]+$
+      description: model generator name
+  - name: generator-tag
+    in: path
+    required: true
+    schema:
+      type: string
+      pattern: ^[a-zA-Z0-9][a-zA-Z0-9-]+$
+      description: model generator version
+
+  responses:
+    200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/manifest.yaml
+    404:
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/manifest_not_found.yaml

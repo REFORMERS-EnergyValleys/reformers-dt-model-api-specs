@@ -1,0 +1,21 @@
+---
+get:
+  summary: Retrieve information about available components in the repository.
+  tags:
+  - Repository settings
+  operationId: repository_settings
+
+  security:
+   - BasicHttpAuthentication: []
+
+  responses:
+    200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/repository_settings_list.yaml
+    # 401:
+    #   $ref: ../components/responses/unauthorized_error.yaml
+    # 403:
+    #   $ref: ../components/responses/insufficient_permissions.yaml

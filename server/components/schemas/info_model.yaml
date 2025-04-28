@@ -1,0 +1,55 @@
+---
+type: object
+title: info about model
+description: provides information about the model, including information about either the associated image or artifact
+required:
+  - parameters
+  - optional_parameters
+  - generation_parameters
+  - format
+properties:
+  parameters:
+    $ref: model_parameters.yaml
+  optional_parameters:
+    $ref: model_optional_parameters.yaml
+  generation_parameters:
+    type: object
+    title: model generator parameters used for creating this model
+    additionalProperties:
+      oneOf:
+        - type: string
+        - type: number
+    example:
+      foo: bar
+  format:
+    $ref: model_format.yaml
+  image-name:
+    type: string
+    title: name of model image
+    pattern: ^[a-zA-Z0-9][a-zA-Z0-9-_\/]+$
+    example: reformers/el-grid-pandapower/v1/1-MVLV-urban-all-0-sw
+  image-tag:
+    type: string
+    title: tag of model image
+    pattern: ^[a-zA-Z0-9][a-zA-Z0-9-_]+$
+    example: latest-dev
+  artifact-group-id:
+    type: string
+    title: group ID of model artifact
+    pattern: ^[a-zA-Z0-9][a-zA-Z0-9-_.]+[a-zA-Z0-9-_]+$
+    example: reformers.el-grid-pandapower.v1-0
+  artifact-id:
+    type: string
+    title: ID (name) of model artifact
+    pattern: ^[a-zA-Z0-9-_]+$
+    example: 1-MVLV-urban-all-0-sw:latest-dev
+  artifact-version:
+    type: string
+    title: version of model artifact
+    pattern: ^[a-zA-Z0-9-_.]+$
+    example: latest-dev
+  artifact-type:
+    type: string
+    title: file extension of model artifact
+    pattern: ^[a-zA-Z0-9]+$
+    example: py

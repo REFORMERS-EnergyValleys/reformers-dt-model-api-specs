@@ -1,0 +1,8 @@
+---
+title: authentication debug information
+type: object
+properties:
+  date:
+    description: timestamp of token authentication
+    example: '2024-10-04T09:20:21.736525+00:00'
+    type: string

@@ -1,0 +1,20 @@
+---
+type: object
+title: manifest not found error
+properties:
+  errors:
+    type: array
+    items:
+      type: object
+      properties:
+        code:
+          type: string
+          example: MANIFEST_UNKNOWN
+        message:
+          type: string
+          example: manifest unknown
+        detail:
+          type: array
+          items:
+            type: object
+          example: [{"Name":"generator1"},{"Tag":"v234"}]

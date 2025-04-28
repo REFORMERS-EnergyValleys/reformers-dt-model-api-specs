@@ -1,0 +1,8 @@
+---
+type: object
+title: list of model generators
+additionalProperties:
+  x-additionalPropertiesName: model-generator-name
+  type: array
+  items:
+    $ref: model_generator_tag.yaml

@@ -1,0 +1,57 @@
+---
+get:
+  summary: Retrieve blob of model image from the repository.
+  tags:
+  - Retrieve blobs
+  operationId: get_blob_model
+
+  security:
+   - NoAuthentication: []
+
+  parameters:
+  - name: generator-name
+    in: path
+    required: true
+    schema:
+      type: string
+      pattern: ^[a-zA-Z0-9][a-zA-Z0-9-]+$
+      description: model generator name
+  - name: generator-tag
+    in: path
+    required: true
+    schema:
+      type: string
+      pattern: ^[a-zA-Z0-9][a-zA-Z0-9-]+$
+      description: model generator version
+  - name: model-name
+    in: path
+    required: true
+    schema:
+      type: string
+      pattern: ^[a-zA-Z0-9][a-zA-Z0-9-]+$
+      description: model name
+  - name: digest
+    in: path
+    required: true
+    schema:
+      type: string
+      pattern: ^sha256:\b[A-Fa-f0-9]{64}\b
+      description: SHA256-based hash of a blob
+
+  responses:
+    200:
+      description: Success
+      content:
+        application/vnd.docker.container.image.v1+json:
+          schema:
+            $ref: ../components/schemas/container_info.yaml
+        application/vnd.docker.image.rootfs.diff.tar.gzip:
+          schema:
+            type: string
+            format: binary
+    404:
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/blob_not_found.yaml
