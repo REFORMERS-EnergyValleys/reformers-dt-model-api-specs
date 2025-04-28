@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Documentation</title>
+  <style>
+    a {
+      text-decoration: none;
+      color: #08aca6;
+      font-weight: bold;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #04215b;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    main {
+      padding: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      width: 300px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      margin: 10px;
+    }
+    .footer-content {
+      display: inline-flex;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>API Documentation for REFOMERS Digital Twin Model API</h1>
+    <p>Explore the specification for the REFORMERS Digital Twin Model API.</p>
+  </header>
+  <main>
+    <div class="card">
+      <h2>Model API Server</h2>
+      <p>This API provides the model creation and validation capabilities of the REFORMERS Digital Twin.</p>
+      <a href="specs/server.html">View Documentation →</a>
+    </div>
+    <div class="card">
+      <h2>Model Repository API Client</h2>
+      <p>This API provides access to the REFORMERS Digital Twin Model Repository.</p>
+      <a href="specs/repository.html">View Documentation →</a>
+    </div>
+  </main>
+  <footer>
+    <div class="footer-content">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/330px-Flag_of_Europe.svg.png" alt="European Flag" width="55px" style="margin-right: 10px">
+      <span>This development has been supported by the [REFORMERS] project of the European Union’s research and innovation programme Horizon Europe under the grant agreement No.101136211.</span>
+    </div>
+  </footer>
+</body>
+</html>

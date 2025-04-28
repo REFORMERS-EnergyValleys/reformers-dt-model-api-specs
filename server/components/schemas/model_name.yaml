@@ -1,6 +1,0 @@
----
-type: string
-title: model name
-pattern: ^[a-z0-9][a-z0-9-]+$
-description: unique name for a model
-example: mvlv-urban-all-0-sw

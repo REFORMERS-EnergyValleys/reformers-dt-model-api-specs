@@ -1,6 +1,0 @@
----
-type: string
-title: model format
-enum:
-  - docker
-  - maven

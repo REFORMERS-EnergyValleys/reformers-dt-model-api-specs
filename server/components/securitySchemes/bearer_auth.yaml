@@ -1,6 +1,0 @@
----
-BearerAuthentication:
-  type: http
-  scheme: bearer
-  bearerFormat: string of hexadecimal characters
-  x-bearerInfoFunc: reformers_model_api_server.controllers.security_controller.info_from_bearer_auth

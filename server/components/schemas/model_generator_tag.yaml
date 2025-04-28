@@ -1,7 +1,0 @@
----
-type: string
-title: model generator tag
-pattern: ^[a-zA-Z0-9][a-zA-Z0-9-]+$
-description: tag for a specific version of a model generator
-# example: latest-dev
-example: v0

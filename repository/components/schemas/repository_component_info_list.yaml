@@ -1,5 +1,0 @@
----
-type: array
-title: list of repository component infos
-items:
-  $ref: repository_component_info.yaml

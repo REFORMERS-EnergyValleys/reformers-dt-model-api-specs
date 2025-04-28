@@ -1,5 +1,0 @@
----
-type: string
-title: ID of model generation task
-pattern: ^(?=(.{4})*$)[A-Za-z0-9+/]*={0,2}$
-example: Z3JpZC1zaW06djA6MTc0MzUzNTQ1Ni41Nzc5MzE=
