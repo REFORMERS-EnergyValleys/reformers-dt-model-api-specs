@@ -8,6 +8,7 @@ on:
       - 'server/openapi.yml'
       - 'repository/openapi.yml'
       - '.github/workflows/generate-and-deploy-api-docs.yaml'
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
